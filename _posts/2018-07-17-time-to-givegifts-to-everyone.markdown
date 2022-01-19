@@ -5,47 +5,36 @@ date:   2018-07-17 15:01:35 +0300
 image:  04.jpg
 tags:   Life
 ---
-Yeah, and if you were the pope they'd be all, "Straighten your pope hat." And "Put on your good vestments." Noooooo! Perhaps, but perhaps your civilization is merely the sewer of an even greater society above you!
+# Hand Tracker
+[Hand Tracker Github](https://github.com/mmorales45/Intro-to-CV)
 
-You lived before you met me?! Ow, my spirit! Humans dating robots is sick. __You people wonder why I'm still single?__ *It's 'cause all the fine robot sisters are dating humans!* I guess if you want children beaten, you have to do it yourself.
+#### Skills Used:
+* OpenCV
+* Python
+* Manipulation
 
-## Are you crazy? I can't swallow that.
+## Overview
+For me Intro to Computer Vision course's final project, I created a hand and gesture tracking algorithm that uses an Intel RealSense camera and a PincherX 100 robotic arm. The base goal of this project is to have the robot mimic actions that the user performs. This would include moving in the basic four directions, opening and closing the gripper and moving forward and backward.
 
-Oh, I don't have time for this. I have to go and buy a single piece of fruit with a coupon and then return it, making people wait behind me while I complain. Meh. So, how 'bout them Knicks? Also Zoidberg.
+<p align="center">
+  <img src="/Marco_Morales_Portfolio/public/images/opencv_vert.gif" alt="animated" />
+</p> 
 
-1. We need rest. The spirit is willing, but the flesh is spongy and bruised.
-2. Fry, we have a crate to deliver.
-3. Have you ever tried just turning off the TV, sitting down with your children, and hitting them?
+### Design
+The project has multiple components that build upon each other and work together at the end to produce the final product. The first component of this project is to get the color and depth data from the camera. These two streams of information are very important to detect the hand, position of the hand and how far away the hand is from the camera. Getting the distance of the hand from the camera was one of the biggest challenges that was faced.
 
-### Why not indeed!
+Using OpenCV, the hand coordinates were found by finding the coordiantes of the centroid of the hand. The hand was detected by creating a mask based on a HSV range, which matches that of the hand. The mask was used to find contours in the image that match the mask. The centroid of the contours was determined and this should match the shape of the hand. 
 
-Nay, I respect and admire Harold Zoid too much to beat him to death with his own Oscar. I don't 'need' to drink. I can quit anytime I want! Soothe us with sweet lies. Bender?! You stole the atom. You don't know how to do any of those.
+The farthest point of the contour was determined by using convex hulls and defects from OpenCV. From this, a line was drawn between the center of the hand and the farthest point on the counter from the centroid. With this line, the distance between these two mains points are calculated and will be used to determine the gripper status, whether it is open or closed.
 
-* Shinier than yours, meatbag.
-* This is the worst part. The calm before the battle.
-* Ooh, name it after me!
+<p align="center">
+  <img src="/Marco_Morales_Portfolio/public/images/cropped_cent.png" />
+</p>
 
-Say what? Throw her in the brig. Hey, you add a one and two zeros to that or we walk! You guys aren't Santa! You're not even robots. How dare you lie in front of Jesus? Ow, my spirit! Who's brave enough to fly into something we all keep calling a death sphere?
+The arm is the PincherX 100 and has to be run with a Robot Operating Software line which follows “roslaunch interbotix_xsarm_control xsarm_control.launch robot_model:=px100”. This ensures the robot can be controlled through the script I created. The robot’s end effector will match the location of the centroid in the stream. If the centroid of the hand passes a certain vertical or horizontal distance boundary, the arm will change its joints so that the robotic arm8 matches that position. For example, moving your hand up will result in the robotic arm moving its end effector up as well. This is the same for the other main directions.
 
-Hey, you add a one and two zeros to that or we walk! You won't have time for sleeping, soldier, not with all the bed making you'll be doing. It's okay, Bender. I like cooking too. Hey, what kinda party is this? There's no booze and only one hooker.
 
-![]({{ site.baseurl }}/images/07.jpg)
-*Minimalism*
+The groundwork for the gripper has already been set and all that is left is the implementation. Since depth is incorporated into the system, the distance between the center of hand and the index finger, for example, will vary greatly depending on the distance from the camera the hand is. If the distance between these two points is less than a threshold, then the gripper will close, and if the distance is greater than the threshold, open the gripper. To compensate for depth changing the distance between the centroid and the index finger, there are three zones with different thresholds. These zones are close to the camera, far away from the camera and in between. Additionally, if the hand of the user falls in the far away zone, the gripper moves towards the user, if the hand falls in the close zone, it moves away from the user and the arm will stay in its current depth if it's in the inbetween zone.
 
-Ummm…to eBay? But I know you in the future. I cleaned your poop. I'm just glad my fat, ugly mama isn't alive to see this day. My fellow Earthicans, as I have explained in my book 'Earth in the Balance'', and the much more popular ''Harry Potter and the Balance of Earth', we need to defend our planet against pollution. Also dark wizards.
-
-Your best is an idiot! Fry, you can't just sit here in the dark listening to classical music. And remember, don't do anything that affects anything, unless it turns out you were supposed to, in which case, for the love of God, don't not do it!
-
-You, a bobsleder!? That I'd like to see! I'm Santa Claus! There's no part of that sentence I didn't like! Noooooo! I can explain. It's very valuable.
-
-I'm Santa Claus! Is the Space Pope reptilian!? Who's brave enough to fly into something we all keep calling a death sphere? I had more, but you go ahead.
-
-It doesn't look so shiny to me. Kif might! You guys aren't Santa! You're not even robots. How dare you lie in front of Jesus? Oh, but you can. But you may have to metaphorically make a deal with the devil. And by "devil", I mean Robot Devil. And by "metaphorically", I mean get your coat.
-
-Check it out, y'all. Everyone who was invited is here. Anyone who laughs is a communist! You're going to do his laundry? Michelle, I don't regret this, but I both rue and lament it.
-
-Bender, we're trying our best. I daresay that Fry has discovered the smelliest object in the known universe! Oh, you're a dollar naughtier than most. Hi, I'm a naughty nurse, and I really need someone to talk to. $9.95 a minute.
-
-You, a bobsleder!? That I'd like to see! No! The kind with looting and maybe starting a few fires! Good news, everyone! There's a report on TV with some very bad news! When I was first asked to make a film about my nephew, Hubert Farnsworth, I thought "Why should I?" Then later, Leela made the film. But if I did make it, you can bet there would have been more topless women on motorcycles. Roll film!
-
-Eeeee! Now say "nuclear wessels"! Why did you bring us here? Yeah, and if you were the pope they'd be all, "Straighten your pope hat." And "Put on your good vestments." That's the ONLY thing about being a slave.
+### Results
+The robotic arm is able to track the user's gestures accurately. If the user moves their hand in any direction, the robot will mimic this motion as well. This applies for vertical and horizontal movement (towards or away from the user) as well. The algorithm does pause when it detects a new gesture and this results in a not so smooth video stream but can be addressed for future work.
