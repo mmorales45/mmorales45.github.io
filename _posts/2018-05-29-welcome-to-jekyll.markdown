@@ -5,21 +5,37 @@ date:   2018-05-29 18:05:55 +0300
 image:  10.jpg
 tags:   Jekyll
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+# RoboKeeper
+[RoboKeeper Github](https://github.com/mmorales45/final-project-robokeeper)
+#### Team Members:
+* Marco Morales
+* Cody Nichoson
+* Jonny Bosnich
+* Joshua Cho
+* Lio Liang
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+#### Skills Used:
+* OpenCV
+* ROS
+* MoveIt!
+* Python
+* Manipulation
 
-Jekyll also offers powerful support for code snippets:
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+### Goal
+The goal of this project was to create a robot that is able to act as a goal keeper and block balls from entering the goal. This would be accomplished by using a HDT Global Adroit Manipulator Arm, an Intel RealSense Camera, a paddle and red balls.
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+<p align="center">
+  <img src="/Marco_Morales_Portfolio/public/images/marco_robo_crop.jpg" />
+</p>
+
+### Tasks
+Each team member was in charge of a compoennt of the project such as the perception, test, or manipulation of the robotic arm. I was primarily in charge of perception for the system. I created a program that is able to track a red ball when it is in the camera's frame.The ball was located by using OpenCV to locate objects that fall within a HSV range. This would provide the lcoation, and coordinates, of the ball relative to the camera and after applying transformations to these coordaintes, the ball's location can be found relative to the base of the Adroit. 
+
+I also contributed to other parts of the system such as the manipulation component. I programmed the robot to be able to retrieve the paddle from its holster and then return to it's home position to be ready to start goal keeping. 
+
+### Future Work
+The system can be improved upon to make it more robust. For example, more high speed camera's can be added to the system as well as increasing the area for where it can goal keep. This would allow for the robot to be able to block balls for a wider area as opposed to just a goal. More high speed camera's can improve the ball detection algorithm. 
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
