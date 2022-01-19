@@ -5,47 +5,80 @@ date:   2018-07-19 15:01:35 +0300
 image:  03.jpg
 tags:   Style
 ---
-Yeah, and if you were the pope they'd be all, "Straighten your pope hat." And "Put on your good vestments." Noooooo! Perhaps, but perhaps your civilization is merely the sewer of an even greater society above you!
+# Dice in a Cup
+[Dice in a Cup Github](https://github.com/mmorales45/Dice-In-A-Cup)
 
-You lived before you met me?! Ow, my spirit! Humans dating robots is sick. __You people wonder why I'm still single?__ *It's 'cause all the fine robot sisters are dating humans!* I guess if you want children beaten, you have to do it yourself.
+#### Skills Used:
+* Python
 
-## Are you crazy? I can't swallow that.
 
-Oh, I don't have time for this. I have to go and buy a single piece of fruit with a coupon and then return it, making people wait behind me while I complain. Meh. So, how 'bout them Knicks? Also Zoidberg.
+## Objective
 
-1. We need rest. The spirit is willing, but the flesh is spongy and bruised.
-2. Fry, we have a crate to deliver.
-3. Have you ever tried just turning off the TV, sitting down with your children, and hitting them?
+For my ME314 Dyanmics class, I created a program that simulates and animates the dyanmics of a dice in a cup. The dice and the cup are initially suspended in the air when the simulation starts.
 
-### Why not indeed!
+<p align="center">
+  <img src="/Marco_Morales_Portfolio/public/images/ME314_project.png" />
+</p>
 
-Nay, I respect and admire Harold Zoid too much to beat him to death with his own Oscar. I don't 'need' to drink. I can quit anytime I want! Soothe us with sweet lies. Bender?! You stole the atom. You don't know how to do any of those.
+### Initial Conditions
+There are only 2 external forces acting on the entire system. There is a x and y force being applied only on the cup where the force acting on the x direction is a function of cosine to have oscillation in the system and the force in the y is there only to counteract the force of gravity of the cup. The y force prevents the cup from falling due to gravity. The dice has no external forces being applied and is only affected by gravity. There are 6 configuration variables and they are as the x,y and theta values for the both the dice and the cup.
 
-* Shinier than yours, meatbag.
-* This is the worst part. The calm before the battle.
-* Ooh, name it after me!
+### Equations
+To model the system, there are a few key equations that need to be calculated. 
 
-Say what? Throw her in the brig. Hey, you add a one and two zeros to that or we walk! You guys aren't Santa! You're not even robots. How dare you lie in front of Jesus? Ow, my spirit! Who's brave enough to fly into something we all keep calling a death sphere?
+The first is kinetic energy for each item. Vb is the body velocity and I is the inertia tensor. Vb was calculated by applying transformations for both the cup and dice to get the locations of their center of mass' in the world frame.
 
-Hey, you add a one and two zeros to that or we walk! You won't have time for sleeping, soldier, not with all the bed making you'll be doing. It's okay, Bender. I like cooking too. Hey, what kinda party is this? There's no booze and only one hooker.
+\begin{equation}
+\ KE = \frac{1}{2} {V_b}^{T}{I_c}V_b
+\end{equation}
 
-![]({{ site.baseurl }}/images/07.jpg)
-*Minimalism*
+Next was potential energy. This was calculated by multiplying the mass of the dice and cup, respectively, by gravity and the y postiion.
 
-Ummm…to eBay? But I know you in the future. I cleaned your poop. I'm just glad my fat, ugly mama isn't alive to see this day. My fellow Earthicans, as I have explained in my book 'Earth in the Balance'', and the much more popular ''Harry Potter and the Balance of Earth', we need to defend our planet against pollution. Also dark wizards.
+\begin{equation}
+\ PE = \frac{1}{2} m{g_r}{y}
+\end{equation}
 
-Your best is an idiot! Fry, you can't just sit here in the dark listening to classical music. And remember, don't do anything that affects anything, unless it turns out you were supposed to, in which case, for the love of God, don't not do it!
+Now with both PE and KE calculated, the Lagrangian can be calculated by subtracting the potential energy from the kinetic energy. The Euler Lagrange equations can now be found as well.
 
-You, a bobsleder!? That I'd like to see! I'm Santa Claus! There's no part of that sentence I didn't like! Noooooo! I can explain. It's very valuable.
 
-I'm Santa Claus! Is the Space Pope reptilian!? Who's brave enough to fly into something we all keep calling a death sphere? I had more, but you go ahead.
+\begin{equation}
+\ L = KE - PE
+\end{equation}
 
-It doesn't look so shiny to me. Kif might! You guys aren't Santa! You're not even robots. How dare you lie in front of Jesus? Oh, but you can. But you may have to metaphorically make a deal with the devil. And by "devil", I mean Robot Devil. And by "metaphorically", I mean get your coat.
+\begin{equation}
+\ \frac{d}{dt} \frac{dL}{\frac{dL}{dq}} - \frac{dL}{dq} = 0
+\end{equation}
 
-Check it out, y'all. Everyone who was invited is here. Anyone who laughs is a communist! You're going to do his laundry? Michelle, I don't regret this, but I both rue and lament it.
+The impact equations can be found by subtracting the derivative of the Lagrangian with respect to the time derivative of the configuration variables before the impact from the same equation but after the impact. This will equal lambda multiplied by the derivative of phi, the contraint, with respect to the configuration variables. This will make up 6 equations, one for every configuration variable. The final equation for impact is the Hamiltonian which is the derivative of the Lagrangian with respect to the time derivative of the configuration variables multiplied by the time derivative of the configuration variables minus the Lagrangian.
 
-Bender, we're trying our best. I daresay that Fry has discovered the smelliest object in the known universe! Oh, you're a dollar naughtier than most. Hi, I'm a naughty nurse, and I really need someone to talk to. $9.95 a minute.
+\begin{equation}
+\ \frac{dL^+}{d \frac{dL}{dq}} - \frac{dL^-}{d \frac{dL}{dq}} = \lambda \frac{d \phi}{dq}
+\end{equation}
 
-You, a bobsleder!? That I'd like to see! No! The kind with looting and maybe starting a few fires! Good news, everyone! There's a report on TV with some very bad news! When I was first asked to make a film about my nephew, Hubert Farnsworth, I thought "Why should I?" Then later, Leela made the film. But if I did make it, you can bet there would have been more topless women on motorcycles. Roll film!
+\begin{equation}
+\ H = \frac{dL}{d \frac{dL}{dq}}{\frac{dL}{dq}} - L 
+\end{equation}
 
-Eeeee! Now say "nuclear wessels"! Why did you bring us here? Yeah, and if you were the pope they'd be all, "Straighten your pope hat." And "Put on your good vestments." That's the ONLY thing about being a slave.
+\begin{equation}
+\ H^+ - H^- = 0
+\end{equation}
+
+
+
+It should be noted that dictionaries were made for before and after impact since numerically solving the equations would take far longer than solving symbolically. The velocities for both dictionaries are different since after impact, the velocities will be in the opposite direction but the position's are the same. 
+
+### Contraints
+There are 16 constraints in this system. Each corner of the dice has four constraints. Those being the top wall of the cup, the bottom wall of the cup, the left wall of the cup and right wall of the cup. More specifically, the x component of the dice is compared to the right and left walls and the y component of the dice is compared to the top and bottom walls. 2 conditions for each corner of the dice is the x component plus or minus the length of the cup and the other two are the y component of the dice plus or minus the width of the cup. These four conditions for each corner of the dice results in the 16 constraints. This also results in each contraint corresponding to a phi equation.
+
+<p align="center">
+  <img src="/Marco_Morales_Portfolio/public/images/314small.jpg" />
+</p>
+
+### Results
+The simulation and animation both presented the expected behaviors for the system. As the simulation starts, the cup is moving only in the x direction and the dice starts to fall down. As the dice hits the bottom side of the cup, the dice bounces upward the cup starts to slowly move downward as some of the energy is being transferred to the cup that was not moving in the y axis at the start. Since the dice is continuously affected by gravity, it will keep going in the downward y direction and this results in the dice and cup system moving further down as time passes. The oscillating x force being applied on the cup results in the dice bouncing between the sides of the cup throughout the simulation.
+
+<p align="center">
+  <img src="/Marco_Morales_Portfolio/public/images/ME314_graph.png" />
+</p>
+
+The graph above shows when the dice impacts the cup when the velocities for the dice become negative. The whole system moves in the negative y direction as well.
