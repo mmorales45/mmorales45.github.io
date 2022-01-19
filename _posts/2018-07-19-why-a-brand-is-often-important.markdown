@@ -2,7 +2,7 @@
 layout: post
 title:  Why a brand is often important
 date:   2018-07-19 15:01:35 +0300
-image:  03.jpg
+image:  ME314_gif.gif
 tags:   Style
 ---
 # Dice in a Cup
