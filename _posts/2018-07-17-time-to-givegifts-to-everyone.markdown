@@ -2,7 +2,7 @@
 layout: post
 title:  Time to give gifts to everyone
 date:   2018-07-17 15:01:35 +0300
-image:  04.jpg
+image:  opencv_horiz.gif
 tags:   Life
 ---
 # Hand Tracker
