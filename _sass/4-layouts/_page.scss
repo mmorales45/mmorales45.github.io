@@ -25,13 +25,13 @@
     background-position: center;
     background-repeat: no-repeat;
     background-color: $light-gray;
-    &:after {
-      content: "";
-      display: table;
-      width: 50%;
-      min-height: 150px;
-      padding-top: 50%;
-    }
+    // &:after {
+    //   content: "";
+    //   display: table;
+    //   width: 50%;
+    //   min-height: 150px;
+    //   padding-top: 50%;
+    // }
   }
 }
 
