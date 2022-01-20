@@ -3,7 +3,7 @@ layout: post
 title:  Hand Tracker
 date:   2021-12-09 15:01:35 +0300 
 image:  opencv_horiz.gif
-tags:   Life
+tags:   
 ---
 [Hand Tracker Github](https://github.com/mmorales45/Intro-to-CV)
 

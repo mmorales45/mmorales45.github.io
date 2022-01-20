@@ -3,7 +3,7 @@ layout: post
 title:  RobotKeeper
 date:   2021-12-11 15:01:35 +0300 
 image:  robokeeper_gif.gif
-tags:   Resources
+tags:   
 ---
 [RoboKeeper Github](https://github.com/mmorales45/final-project-robokeeper)
 #### Team Members:
