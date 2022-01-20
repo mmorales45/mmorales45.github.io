@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Capstone Project
-date:   2021-12-10 15:01:35 +0300 
+date:   2021-12-08 15:01:35 +0300 
 image:  best.gif
 tags:   Home
 ---
