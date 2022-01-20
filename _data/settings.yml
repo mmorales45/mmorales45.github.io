@@ -15,13 +15,17 @@ author:
 
 #-------------------------------
 # Contact links
-github: https://github.com/mmorales45?tab=repositories/ # Add your Twitter handle
-linkedin: https://www.linkedin.com/in/marco-morales-0aa152201/ # Add your Facebook handle
-
+github: https://github.com/mmorales45?tab=repositories # Add your Twitter handle
+facebook: https://facebook.com/ # Add your Facebook handle
+dribbble: https://dribbble.com/ # Add your Dribbble handle
+instagram: https://instagram.com/ # Add your Instagram handle
+pinterest: https://pinterest.com/ # Add your Pinterest handle
 
 
 #-------------------------------
 # Comment Section (Disqus)
+disqus-identifier: mr-brown # add your shortname for Disqus Comment. For example mr-brown
+
 
 #-------------------------------
 # Instagram Feed
