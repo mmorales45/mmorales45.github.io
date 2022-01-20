@@ -1,11 +1,10 @@
 ---
 layout: post
-title:  Why a brand is often important
-date:   2018-07-19 15:01:35 +0300
+title:  Dice in a Cup
+date:   2021-12-10 15:01:35 +0300 
 image:  ME314_gif.gif
 tags:   Style
 ---
-# Dice in a Cup
 [Dice in a Cup Github](https://github.com/mmorales45/Dice-In-A-Cup)
 
 #### Skills Used:

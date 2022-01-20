@@ -1,11 +1,10 @@
 ---
 layout: post
-title:  Moving to a new place
-date:   2018-07-05 15:01:35 +0300
+title:  Capstone Project
+date:   2021-12-10 15:01:35 +0300 
 image:  best.gif
 tags:   Home
 ---
-# Capstone Project
 [Capstone Github](https://github.com/mmorales45/Capstone-Project)
 
 #### Skills Used:
