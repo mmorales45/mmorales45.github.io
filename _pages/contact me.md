@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Style Guide
-permalink: /styleguide/
+title: Contact Me!
+permalink: /contact_me/
 image: 08.jpg
 ---
 
