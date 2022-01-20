@@ -2,7 +2,7 @@
 layout: page
 title: Contact Me!
 permalink: /contact_me/
-image: 08.jpg
+image:
 ---
 
 ## Contact Info
