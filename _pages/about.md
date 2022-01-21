@@ -2,7 +2,7 @@
 layout: page
 title: About
 permalink: /about/
-image: grad_photo.png
+image: grad_photo.jpg
 ---
 
 ## About Me
