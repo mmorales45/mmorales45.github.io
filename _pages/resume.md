@@ -5,7 +5,7 @@ permalink: /resume/
 # image: 08.jpg
 ---
 
-<iframe src="/zolan/images/Marco Morales.docx.pdf" width="100%" height="1000px">
+<iframe src="/zolan/images/Marco_Morales.pdf" width="100%" height="1000px">
 </iframe>
 
 <!-- <p align="center">
