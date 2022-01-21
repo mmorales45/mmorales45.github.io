@@ -5,15 +5,15 @@ date:   2021-12-09 15:01:35 +0300
 image:  opencv_horiz.gif
 tags:   
 ---
+## Overview
+For me Intro to Computer Vision course's final project, I created a hand and gesture tracking algorithm that uses an Intel RealSense camera and a PincherX 100 robotic arm. The base goal of this project is to have the robot mimic actions that the user performs. This would include moving in the basic four directions, opening and closing the gripper and moving forward and backward.
+
 [Hand Tracker Github](https://github.com/mmorales45/Intro-to-CV)
 
 #### Skills Used:
 * OpenCV
 * Python
 * Manipulation
-
-## Overview
-For me Intro to Computer Vision course's final project, I created a hand and gesture tracking algorithm that uses an Intel RealSense camera and a PincherX 100 robotic arm. The base goal of this project is to have the robot mimic actions that the user performs. This would include moving in the basic four directions, opening and closing the gripper and moving forward and backward.
 
 <p align="center">
   <img src="/Marco_Morales_Portfolio/public/images/opencv_vert.gif" alt="animated" />
