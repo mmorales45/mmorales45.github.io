@@ -8,6 +8,6 @@ permalink: /resume/
 <iframe src="/zolan/images/Marco Morales.docx.pdf" width="100%" height="500px">
 </iframe>
 
-<p align="center">
+<!-- <p align="center">
   <img src="/zolan/images/resume.png" />
-</p>
+</p> -->
