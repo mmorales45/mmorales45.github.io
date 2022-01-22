@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Resume
+title: Morales | Resume
 permalink: /resume/
 # image: 08.jpg
 ---

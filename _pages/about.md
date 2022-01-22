@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: Morales | About
 permalink: /about/
 image: grad_photo.png
 ---
