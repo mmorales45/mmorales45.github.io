@@ -27,41 +27,12 @@ To model the system, there are a few key equations that need to be calculated.
 
 The first is kinetic energy for each item. Vb is the body velocity and I is the inertia tensor. Vb was calculated by applying transformations for both the cup and dice to get the locations of their center of mass' in the world frame.
 
-\begin{equation}
-\ KE = \frac{1}{2} {V_b}^{T}{I_c}V_b
-\end{equation}
-
 Next was potential energy. This was calculated by multiplying the mass of the dice and cup, respectively, by gravity and the y postiion.
-
-\begin{equation}
-\ PE = \frac{1}{2} m{g_r}{y}
-\end{equation}
 
 Now with both PE and KE calculated, the Lagrangian can be calculated by subtracting the potential energy from the kinetic energy. The Euler Lagrange equations can now be found as well.
 
 
-\begin{equation}
-\ L = KE - PE
-\end{equation}
-
-\begin{equation}
-\ \frac{d}{dt} \frac{dL}{\frac{dL}{dq}} - \frac{dL}{dq} = 0
-\end{equation}
-
 The impact equations can be found by subtracting the derivative of the Lagrangian with respect to the time derivative of the configuration variables before the impact from the same equation but after the impact. This will equal lambda multiplied by the derivative of phi, the contraint, with respect to the configuration variables. This will make up 6 equations, one for every configuration variable. The final equation for impact is the Hamiltonian which is the derivative of the Lagrangian with respect to the time derivative of the configuration variables multiplied by the time derivative of the configuration variables minus the Lagrangian.
-
-\begin{equation}
-\ \frac{dL^+}{d \frac{dL}{dq}} - \frac{dL^-}{d \frac{dL}{dq}} = \lambda \frac{d \phi}{dq}
-\end{equation}
-
-\begin{equation}
-\ H = \frac{dL}{d \frac{dL}{dq}}{\frac{dL}{dq}} - L 
-\end{equation}
-
-\begin{equation}
-\ H^+ - H^- = 0
-\end{equation}
-
 
 
 It should be noted that dictionaries were made for before and after impact since numerically solving the equations would take far longer than solving symbolically. The velocities for both dictionaries are different since after impact, the velocities will be in the opposite direction but the position's are the same. 
