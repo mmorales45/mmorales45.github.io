@@ -1,13 +1,12 @@
 ---
 layout: post
-title:  Capstone Project
+title:  Mobile Manipulation
 date:   2021-12-08 15:01:35 +0300 
 image:  best.gif
 tags:   
 ---
-## Overview
-For the Final Project, the goal was to control the Kuka youBot in CoppeliaSim
-and have it pick up a cube and move it a goal location specified by the user. 
+I progammed the youBot, from Kuku, in CoppeliaSim
+to have it pick up a cube and move it a goal location specified by the user under various conditions.
 
 [Capstone Github](https://github.com/mmorales45/Capstone-Project)
 

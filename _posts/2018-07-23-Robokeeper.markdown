@@ -5,7 +5,7 @@ date:   2021-12-11 15:01:35 +0300
 image:  robokeeper_gif.gif
 tags:   
 ---
-### Goal
+
 The goal of this project was to create a robot that is able to act as a goal keeper and block balls from entering the goal. This would be accomplished by using a HDT Global Adroit Manipulator Arm, an Intel RealSense Camera, a paddle and red balls.
 
 [RoboKeeper Github](https://github.com/mmorales45/final-project-robokeeper)

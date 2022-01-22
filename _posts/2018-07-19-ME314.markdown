@@ -5,9 +5,8 @@ date:   2021-12-10 15:01:35 +0300
 image:  ME314_gif.gif
 tags:   
 ---
-## Objective
 
-For my ME314 Dyanmics class, I created a program that simulates and animates the dyanmics of a dice in a cup. The dice and the cup are initially suspended in the air when the simulation starts.
+Simulation and animation of the dyanmics of a dice in a cup. The dice and the cup are initially suspended in the air when the simulation starts.
 
 
 [Dice in a Cup Github](https://github.com/mmorales45/Dice-In-A-Cup)
