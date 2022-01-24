@@ -15,7 +15,7 @@ to have it pick up a cube and move it a goal location specified by the user unde
 * Manipulation
 
 <p align="center">
-  <img src="/public/images/overshoot.gif" alt="animated" />
+  <img src="/images/overshoot.gif" alt="animated" />
 </p> 
 
 ## NextState
