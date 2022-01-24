@@ -23,6 +23,16 @@ The goal of this project was to create a robot that is able to act as a goal kee
 * Python
 * Manipulation
 
+<iframe
+    width="640"
+    height="480"
+    src="https://youtu.be/Q41JVfnfLcU"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+>
+</iframe>
+
 
 <p align="center">
   <img src="/images/marco_robo_crop.jpg" />
