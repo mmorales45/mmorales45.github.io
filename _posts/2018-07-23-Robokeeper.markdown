@@ -25,7 +25,7 @@ The goal of this project was to create a robot that is able to act as a goal kee
 
 
 <p align="center">
-  <img src="/mmorales45.github.io/public/images/marco_robo_crop.jpg" />
+  <img src="./public/images/marco_robo_crop.jpg" />
 </p>
 
 ### Tasks
