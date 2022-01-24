@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Morales | Resume
-permalink: /resume/
+title: Resume
+permalink: /Morales|Resume/
 # image: 08.jpg
 ---
 
@@ -10,3 +10,6 @@ permalink: /resume/
 <!-- <p align="center">
   <img src="/zolan/images/resume.png" />
 </p> -->
+
+
+[View My Resume!](https://drive.google.com/file/d/10YJiNAX1rQ01NPbIMNLpf667uzx2v53a/view?usp=sharing)

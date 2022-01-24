@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Morales | About
-permalink: /about/
+title: About
+permalink: /Morales|About/
 image: grad_photo.png
 ---
 
