@@ -15,7 +15,7 @@ Simulation and animation of the dyanmics of a dice in a cup. The dice and the cu
 * Python
 
 <p align="center">
-  <img src="/Marco_Morales_Portfolio/public/images/ME314_project.png" />
+  <img src="/public/images/ME314_project.png" />
 </p>
 
 ### Initial Conditions
@@ -40,14 +40,14 @@ It should be noted that dictionaries were made for before and after impact since
 There are 16 constraints in this system. Each corner of the dice has four constraints. Those being the top wall of the cup, the bottom wall of the cup, the left wall of the cup and right wall of the cup. More specifically, the x component of the dice is compared to the right and left walls and the y component of the dice is compared to the top and bottom walls. 2 conditions for each corner of the dice is the x component plus or minus the length of the cup and the other two are the y component of the dice plus or minus the width of the cup. These four conditions for each corner of the dice results in the 16 constraints. This also results in each contraint corresponding to a phi equation.
 
 <p align="center">
-  <img src="/Marco_Morales_Portfolio/public/images/314small.jpg" />
+  <img src="/public/images/314small.jpg" />
 </p>
 
 ### Results
 The simulation and animation both presented the expected behaviors for the system. As the simulation starts, the cup is moving only in the x direction and the dice starts to fall down. As the dice hits the bottom side of the cup, the dice bounces upward the cup starts to slowly move downward as some of the energy is being transferred to the cup that was not moving in the y axis at the start. Since the dice is continuously affected by gravity, it will keep going in the downward y direction and this results in the dice and cup system moving further down as time passes. The oscillating x force being applied on the cup results in the dice bouncing between the sides of the cup throughout the simulation.
 
 <p align="center">
-  <img src="/Marco_Morales_Portfolio/public/images/ME314_graph.png" />
+  <img src="/public/images/ME314_graph.png" />
 </p>
 
 The graph above shows when the dice impacts the cup when the velocities for the dice become negative. The whole system moves in the negative y direction as well.

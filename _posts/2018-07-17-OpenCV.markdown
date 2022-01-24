@@ -15,7 +15,7 @@ I created a hand and gesture tracking algorithm that uses an Intel RealSense cam
 * Manipulation
 
 <p align="center">
-  <img src="/Marco_Morales_Portfolio/public/images/opencv_vert.gif" alt="animated" />
+  <img src="/public/images/opencv_vert.gif" alt="animated" />
 </p> 
 
 ### Design
@@ -26,7 +26,7 @@ Using OpenCV, the hand coordinates were found by finding the coordiantes of the 
 The farthest point of the contour was determined by using convex hulls and defects from OpenCV. From this, a line was drawn between the center of the hand and the farthest point on the counter from the centroid. With this line, the distance between these two mains points are calculated and will be used to determine the gripper status, whether it is open or closed.
 
 <p align="center">
-  <img src="/Marco_Morales_Portfolio/public/images/cropped_cent.png" />
+  <img src="/public/images/cropped_cent.png" />
 </p>
 
 The arm is the PincherX 100 and has to be run with a Robot Operating Software line which follows “roslaunch interbotix_xsarm_control xsarm_control.launch robot_model:=px100”. This ensures the robot can be controlled through the script I created. The robot’s end effector will match the location of the centroid in the stream. If the centroid of the hand passes a certain vertical or horizontal distance boundary, the arm will change its joints so that the robotic arm8 matches that position. For example, moving your hand up will result in the robotic arm moving its end effector up as well. This is the same for the other main directions.
