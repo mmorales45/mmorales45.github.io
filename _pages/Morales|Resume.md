@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Resume
-permalink: /Morales|Resume/
+permalink: /Morales-Resume/
 # image: 08.jpg
 ---
 

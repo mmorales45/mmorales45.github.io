@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Contact Me!
-permalink: /Morales|Contact/
+permalink: /Morales-Contact/
 image:
 ---
 
