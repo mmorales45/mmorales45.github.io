@@ -15,7 +15,7 @@ Simulation and animation of the dyanmics of a dice in a cup. The dice and the cu
 * Python
 
 <p align="center">
-  <img src="/public/images/ME314_project.png" />
+  <img src="/images/ME314_project.png" />
 </p>
 
 ### Initial Conditions
