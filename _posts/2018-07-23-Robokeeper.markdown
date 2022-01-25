@@ -26,7 +26,7 @@ The goal of this project was to create a robot that is able to act as a goal kee
 An overhead view of the RoboKeeper blocking balls from entering the goal.
 
 <iframe width="420" height="315"
-src="https://youtube/embed/d8RzyE4SyDA">
+src="https://youtube.com/embed/d8RzyE4SyDA">
 </iframe>
 
 In the video below, we have the Adroit actively goal keeping against one of the team members. 
@@ -44,7 +44,7 @@ I also contributed to other parts of the system such as the manipulation compone
 The RoboKeeper can pick up the paddle through use of servies. 
 
 <iframe width="420" height="315"
-src="https://youtu.be/embed/8SiEspXxug8">
+src="https://youtube.com/embed/8SiEspXxug8">
 </iframe>
 
 <p align="center">
