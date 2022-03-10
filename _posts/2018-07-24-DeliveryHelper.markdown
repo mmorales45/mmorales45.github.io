@@ -6,42 +6,52 @@ image:  new_robokeeper.gif
 tags:   
 ---
 
-The goal of this project was to create a robot that is able to act as a goal keeper and block balls from entering the goal. This would be accomplished by using a HDT Global Adroit Manipulator Arm, an Intel RealSense Camera, a paddle and red balls.
+For my Winter Project, I choose to create a robotic system that can act as a delivery assistant for delivering packages for those that need assistance or have many packages to carry at once.
 
-[RoboKeeper Github](https://github.com/mmorales45/final-project-robokeeper)
-#### Team Members:
-* Marco Morales
-* Cody Nichoson
-* Jonny Bosnich
-* Joshua Cho
-* Lio Liang
+[DeliveryHelper Github](https://github.com/mmorales45/deliveryhelper)
 
 #### Skills Used:
-* OpenCV
-* ROS
+* MediaPipe
+* Robot Operating Software(ROS)
 * MoveIt!
+* C++
 * Python
 * Manipulation
+* MoveBase
 
-An overhead view of the RoboKeeper blocking balls from entering the goal.
+A clip of the Ridgeback following an AprilTag that is strapped on a container that is constantly moving. 
 
 <iframe width="420" height="315"
 src="https://youtube.com/embed/d8RzyE4SyDA">
 </iframe>
 
-In the video below, we have the Adroit actively goal keeping against one of the team members. 
+
+### Systems
+The project is composed of three main subsystems: manipulation, navigation, and perception. The main goal relied on these systems being able to communicate with one another and my approach for having theses systems interact with each other is through the use of topics provided by ROS. The systems can either subscribe or publish to the main topic that will take care of the interactions. 
+
+#### Manipulation 
+
+The Sawyer arm was controlled by using MoveIt! The arm can move through either the use of joint control or position control. Joint control was used for picking up blocks from the base of the Ridgeback whereas position control was used for picking up blocks from the little platform attached to the Ridgeback.
+
+The video that follows presents the Sawyer arm picking up and placing a block through the use of ROS Services.
+
+#### Navigation 
+
+Getting the Ridgeback to follow a person was the first obstacle that needed to be overcome. My approach was to use a large AprilTag and place it on a vest that a person wears. Using AprilTag detection, the position of the tag was received and this position was used for determining where the Ridgeback move to. Using Move Base, the Ridgeback moved to a position offset from the AprilTag/Person and continuously sends out goals as long as the state is `Follow`.
+
+#### Perception 
+
+Initially my plan was to use AprilTags and attach them to gloves that the person would wear but being able to communicate with the system without other attachments/tools made more sense. MediaPipe was used for hand detection as well as pose detection. The more reliable option was the hand detection method since using the full body pose detection was too slow and would make the system unable to detect most gestures. 
+
+### Integration
+
+Handling three systems that are independent of each other was a daunting task but as mentioned earlier, this would be solved by communicating through ROS topics. The general pipeline is that the perception detects hands/gestures and sends a message to the main topic. The Manipulation node then subscribes to this node and makes the arm perform the pick and place action. Once this action is done, it sends a message to the same topic with a message in the form of "Follow". When this message is true, the Ridgeback will follow the person but as soon as the person shows their hand again, then the Ridgeback will stop until the Manipulation node has accomplished it motion and publishes `Follow`.
+
+
 
 <iframe width="420" height="315"
 src="https://youtube.com/embed/Q41JVfnfLcU">
 </iframe>
-
-### Tasks
-Each team member was in charge of a compoennt of the project such as the perception, test, or manipulation of the robotic arm. I was primarily in charge of perception for the system. I created a program that is able to track a red ball when it is in the camera's frame.The ball was located by using OpenCV to locate objects that fall within a HSV range. This would provide the lcoation, and coordinates, of the ball relative to the camera and after applying transformations to these coordaintes, the ball's location can be found relative to the base of the Adroit. 
-
-I also contributed to other parts of the system such as the manipulation component. I programmed the robot to be able to retrieve the paddle from its holster and then return to it's home position to be ready to start goal keeping. 
-
-
-The RoboKeeper can pick up the paddle through use of servies. 
 
 <iframe width="420" height="315"
 src="https://youtube.com/embed/8SiEspXxug8">
@@ -51,7 +61,3 @@ src="https://youtube.com/embed/8SiEspXxug8">
   <img src="/images/marco_robo_crop.jpg" />
 </p>
 
-
-
-### Future Work
-The system can be improved upon to make it more robust. For example, more high speed camera's can be added to the system as well as increasing the area for where it can goal keep. This would allow for the robot to be able to block balls for a wider area as opposed to just a goal. More high speed camera's can improve the ball detection algorithm. 
