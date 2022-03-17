@@ -72,9 +72,3 @@ src="https://www.youtube.com/embed/op8U7gr9XKs">
 
 Handling three systems that are independent of each other was a daunting task but as mentioned earlier, this would be solved by communicating through ROS topics. The general pipeline is that the perception detects hands/gestures and sends a message to the main topic. The Manipulation node then subscribes to this node and makes the arm perform the pick and place action. Once this action is done, it sends a message to the same topic with a message in the form of "Follow". When this message is true, the Ridgeback will follow the person but as soon as the person shows their hand again, then the Ridgeback will stop until the Manipulation node has accomplished it motion and publishes `Follow`.
 
-
-
-<p align="center">
-  <img src="/images/marco_robo_crop.jpg" />
-</p>
-
