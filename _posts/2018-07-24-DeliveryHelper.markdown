@@ -22,7 +22,7 @@ For my Winter Project, I choose to create a robotic system that can act as a del
 A clip of the Ridgeback following me when wearing an AprilTag.
 
 <iframe width="420" height="315"
-src="https://youtube.com/embd/32niG_GuvUo">
+src="https://youtube.com/embed/32niG_GuvUo">
 </iframe>
 
 
