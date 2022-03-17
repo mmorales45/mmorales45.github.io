@@ -44,11 +44,9 @@ Getting the Ridgeback to follow a person was the first obstacle that needed to b
 Initially my plan was to use AprilTags and attach them to gloves that the person would wear but being able to communicate with the system without other attachments/tools made more sense. MediaPipe was used for hand detection as well as pose detection. The more reliable option was the hand detection method since using the full body pose detection was too slow and would make the system unable to detect most gestures. 
 
 ### Integration
-
 <p align="center">
-  <img src="/images/DeliveryHelperFlowchart.png" />
+  <img src="/images/marco_robo_crop.jpg" />
 </p>
-
 Handling three systems that are independent of each other was a daunting task but as mentioned earlier, this would be solved by communicating through ROS topics. The general pipeline is that the perception detects hands/gestures and sends a message to the main topic. The Manipulation node then subscribes to this node and makes the arm perform the pick and place action. Once this action is done, it sends a message to the same topic with a message in the form of "Follow". When this message is true, the Ridgeback will follow the person but as soon as the person shows their hand again, then the Ridgeback will stop until the Manipulation node has accomplished it motion and publishes `Follow`.
 
 
