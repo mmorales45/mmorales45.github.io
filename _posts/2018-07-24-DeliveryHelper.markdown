@@ -19,11 +19,11 @@ For my Winter Project, I choose to create a robotic system that can act as a del
 * Manipulation
 * MoveBase
 
-A clip of the Ridgeback following me when wearing an AprilTag.
+A clip of the Ridgeback following an AprilTag that is strapped on a container that is constantly moving. 
 
-<!-- <iframe width="420" height="315"
-src="https://youtube.com/embed/32niG_GuvUo">
-</iframe> -->
+<iframe width="420" height="315"
+src="https://youtube.com/embed/d8RzyE4SyDA">
+</iframe>
 
 
 ### Systems
