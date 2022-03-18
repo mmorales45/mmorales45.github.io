@@ -43,6 +43,9 @@ The video that follows presents the Sawyer arm picking up and placing a block th
 src="https://www.youtube.com/embed/SF2OrLYvXV4">  
 </iframe>
 
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/SUha2dAgDAM">
+</iframe>
 
 #### Navigation 
 
@@ -50,6 +53,11 @@ Getting the Ridgeback to follow a person was the first obstacle that needed to b
 
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/clr_ug3EA_I">  
+</iframe>
+
+
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/RiRbWFQ4rcE">
 </iframe>
 
 #### Perception 
