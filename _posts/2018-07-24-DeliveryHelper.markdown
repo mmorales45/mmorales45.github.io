@@ -60,6 +60,10 @@ src="https://www.youtube.com/embed/clr_ug3EA_I">
 src="https://www.youtube.com/embed/RiRbWFQ4rcE">
 </iframe>
 
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/bEwPnggq2Cc">
+</iframe>
+
 #### Perception 
 
 Initially my plan was to use AprilTags and attach them to gloves that the person would wear but being able to communicate with the system without other attachments/tools made more sense. MediaPipe was used for hand detection as well as pose detection. The more reliable option was the hand detection method since using the full body pose detection was too slow and would make the system unable to detect most gestures. 
