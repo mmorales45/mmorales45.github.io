@@ -31,6 +31,8 @@ src="https://youtube.com/embed/32niG_GuvUo">
 ### Systems
 The project is composed of three main subsystems: manipulation, navigation, and perception. The main goal relied on these systems being able to communicate with one another and my approach for having theses systems interact with each other is through the use of topics provided by ROS. The systems can either subscribe or publish to the main topic that will take care of the interactions. 
 
+A clip of the Ridgeback following me continuously. 
+
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/YpbKCqEOXKY">  
 </iframe>
@@ -91,6 +93,8 @@ src="https://www.youtube.com/embed/op8U7gr9XKs">
 </p>
 
 Handling three systems that are independent of each other was a daunting task but as mentioned earlier, this would be solved by communicating through ROS topics. The general pipeline is that the perception detects hands/gestures and sends a message to the main topic. The Manipulation node then subscribes to this node and makes the arm perform the pick and place action. Once this action is done, it sends a message to the same topic with a message in the form of "Follow". When this message is true, the Ridgeback will follow the person but as soon as the person shows their hand again, then the Ridgeback will stop until the Manipulation node has accomplished it motion and publishes `Follow`.
+
+When the launchfile is ran with the perception node, once perception detects a hand, it will start making the Ridgeback follow the person. Once hands are detected again, it will start the manipulation node to pick up the block on the base. The next instance will result in the Sawyer picking up the block on the attached stand.
 
 
 ### Future Work
