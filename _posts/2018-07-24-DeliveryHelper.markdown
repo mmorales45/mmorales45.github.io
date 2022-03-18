@@ -39,7 +39,7 @@ src="https://www.youtube.com/embed/YpbKCqEOXKY">
 
 The Sawyer arm was controlled by using MoveIt! The arm can move through either the use of joint control or position control. Joint control was used for picking up blocks from the base of the Ridgeback whereas position control was used for picking up blocks from the little platform attached to the Ridgeback.
 
-The video that follows presents the Sawyer arm picking up and placing a block through the use of ROS Services.
+The video that follows presents the Sawyer arm picking up and placing a block through the use of ROS Services as well as the view in RVIZ of the robot interacting with the block. 
 
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/SF2OrLYvXV4">  
@@ -53,10 +53,12 @@ src="https://www.youtube.com/embed/SUha2dAgDAM">
 
 Getting the Ridgeback to follow a person was the first obstacle that needed to be overcome. My approach was to use a large AprilTag and place it on a vest that a person wears. Using AprilTag detection, the position of the tag was received and this position was used for determining where the Ridgeback move to. Using Move Base, the Ridgeback moved to a position offset from the AprilTag/Person and continuously sends out goals as long as the state is `Follow`.
 
+The next video shows the Ridgeback following me as I turn towards a hallway.
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/clr_ug3EA_I">  
 </iframe>
 
+The next two videos show the Ridgeback rotating to match the user's position. One is the the RVIZ view of the robot detecting the AprilTag and then issuing commands to rotate the robot while the other is the real world video of the Ridgeback rotating. 
 
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/RiRbWFQ4rcE">
@@ -70,9 +72,13 @@ src="https://www.youtube.com/embed/bEwPnggq2Cc">
 
 Initially my plan was to use AprilTags and attach them to gloves that the person would wear but being able to communicate with the system without other attachments/tools made more sense. MediaPipe was used for hand detection as well as pose detection. The more reliable option was the hand detection method since using the full body pose detection was too slow and would make the system unable to detect most gestures. 
 
+The next video is the camera's video using hand detecting with MediaPipe.
+
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/bXr1E_0RuOY">  
 </iframe>
+
+The next video is the camera's video using Pose detecting with MediaPipe.
 
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/op8U7gr9XKs">
