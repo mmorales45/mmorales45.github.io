@@ -1,12 +1,14 @@
 ---
 layout: post
 title:  DeliveryHelper
-date:   2022-2-11 15:01:35 +0300 
+date:   2022-3-18 15:01:35 +0300 
 image:  DeliveryHelper.gif
 tags:   
 ---
 
-For my Winter Project, I choose to create a robotic system that can act as a delivery assistant for delivering packages for those that need assistance or have many packages to carry at once.
+For my Winter Project, I choose to create a robotic system that can act as a delivery assistant for delivering packages for those that need assistance or have many packages to carry at once. It consists of a Ridgeback mobile base with a Sawyer arm mounted to it with a Bumblebee camera attached to the base.
+
+For more information on the Ridgeback and Sawyer, check out the follow repositories: [Ridgeback](https://github.com/jimas95/nu_ridgeback/blob/master/nuridgeback_robot/launch/accessories.launch), and [Sawback](https://github.com/jimas95/sawback)
 
 [DeliveryHelper Github](https://github.com/mmorales45/deliveryhelper)
 
@@ -84,3 +86,7 @@ src="https://www.youtube.com/embed/op8U7gr9XKs">
 
 Handling three systems that are independent of each other was a daunting task but as mentioned earlier, this would be solved by communicating through ROS topics. The general pipeline is that the perception detects hands/gestures and sends a message to the main topic. The Manipulation node then subscribes to this node and makes the arm perform the pick and place action. Once this action is done, it sends a message to the same topic with a message in the form of "Follow". When this message is true, the Ridgeback will follow the person but as soon as the person shows their hand again, then the Ridgeback will stop until the Manipulation node has accomplished it motion and publishes `Follow`.
 
+
+### Future Work
+
+There are two key ways to improve the system. First, improving the navigation of the system so it can better follow the person through hallways, around obstacles, etc. The other way is to remove the need for a large AprilTag on the person and some other form of human detection. This would help remove the need for extra components and make it more intuitive to apply in real work scenarios. 
