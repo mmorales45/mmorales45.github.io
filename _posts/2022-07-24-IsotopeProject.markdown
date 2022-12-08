@@ -12,7 +12,7 @@ After gaining experience in a variety of areas in robotics, I wanted to work on 
 
 The goal of this project is to use these three independent robots and have them work together to navigate through a radioactive enviorment, approach the isotope target, decouple it from the beam line and finally bring it back to reseachers so that they can perform experiments and reearch on it. 
 
-To learn more about getting the system running, check out my [Github Repo!](https://github.com/mmorales45/deliveryhelper)
+To learn more about getting the system running, check out my [Github Repo!](https://github.com/mmorales45/IsotopeRetrieval)
 
 #### Skills Used:
 * Robot Operating Software(ROS)
@@ -28,76 +28,41 @@ A clip of the Ridgeback following me when wearing an AprilTag.
 src="https://youtube.com/embed/32niG_GuvUo">
 </iframe>
 
+### Design of the System
 
-### Systems
-The project is composed of three main subsystems: manipulation, navigation, and perception. The main goal relied on these systems being able to communicate with one another and my approach for having theses systems interact with each other is through the use of topics provided by ROS. The systems can either subscribe or publish to the main topic that will take care of the interactions. 
+The system was composed of two different arms due to budgest contraints. One option was to use two UR5e to make the system symmetrical and balanced but this came at the cost of the total payload the arms could carry to be 10 kg. This could limit the ability of the system to perform is faced with a heavy object. Although the system would be not symmetrical and it would require to mount the arms so that is not imbalanced, the ability to have a total payload of 21 kg would allow the system to be versatile through a variety of different objetcs. 
 
-A clip of the Ridgeback following me continuously. 
+<!--- Insert Picture -->
 
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/YpbKCqEOXKY">  
-</iframe>
+The initial system was composed was composed of the core robotic components but with no grippers attached and each arm was controlled by its own Raspberry PI4. The idea behind the two Raspberry PI 4s was ti reduce the amount of load each computer would have to go through and each computer would run the driver for just one arm. A main computer would be used by the researchers and the three computers would share the same ROS_MASTER_URI so that the main computer can access the nodes/drivers for each arm without being connected to it directly. Besides have no gripper, the biggest flaw in this system was power. The two robotic arms and mobile base were being powered by the battery on the MiR base and with the battery being used by three robots already, adding two more sources of power consumption was going to be a problem if the power draw is too much for the onboard battery. 
 
-#### Manipulation 
+<!--- Insert Picture -->
 
-The Sawyer arm was controlled by using MoveIt! The arm can move through either the use of joint control or position control. Joint control was used for picking up blocks from the base of the Ridgeback whereas position control was used for picking up blocks from the little platform attached to the Ridgeback.
+The second iteration of the system now had a gripper! However it was an old model Robotis Gripper that did not provide enough force to grip objects heavier than 3 kgs. However, it was enough for picking up light objects. In terms of the computer for the system, it was now down to just one Raspberry PI 4. This was influenced by the previously mentioned power issue but also because a MoveIt config package was made so that a single launchfile could run both robots drivers and the MoveIt launchfile can allow for both arms to move in the same ROS_MASTER. But an issue that came up was performance. Path planning was much slower when compared to just one computer per arm and this is to be expected since the computer was also running the full desktop version of Ubuntu so it had other processes occuring in the background. Increasing this performance with a single onboard computer that would not draw too much power lead to idea of using a Nvidia Jetson Nano but it still had many of the same shortcomings. 
 
-The video that follows presents the Sawyer arm picking up and placing a block through the use of ROS Services as well as the view in RVIZ of the robot interacting with the block. 
+<!--- Insert Picture -->
+The final iteration of the system now had Robotiq grippers for each arm. The grippers were initially controlled through low level control but eventually the ROS drivers/wrappers for the Robotiq grippers were fixed and used. As for the computer of the system, a powerful Alienware laptop was used that was running Ubuntu and running both robotic arm drivers, the camera, the the manipulation node. A laptop is a great solution. Its compact which is a huge benefit considering the amount of space on the system was limited and its powerful enough to enough everything without a concern for performance. There was a small problem in the form of power. This computer drew much more power than its Raspberry Pi 4 competitor which an average power consumption of 85 watts wereas the smaller computer only drew around 5-10 watts. The solution was to add an additional battery that could power the laptop for a full day of operation. 
 
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/SF2OrLYvXV4">  
-</iframe>
 
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/SUha2dAgDAM">
-</iframe>
 
-#### Navigation 
+#### Manipulation                                     ################OLD#################
 
-Getting the Ridgeback to follow a person was the first obstacle that needed to be overcome. My approach was to use a large AprilTag and place it on a vest that a person wears. Using AprilTag detection, the position of the tag was received and this position was used for determining where the Ridgeback move to. Using Move Base, the Ridgeback moved to a position offset from the AprilTag/Person and continuously sends out goals as long as the state is `Follow`.
 
-The next video shows the Ridgeback following me as I turn towards a hallway.
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/clr_ug3EA_I">  
-</iframe>
 
-The next two videos show the Ridgeback rotating to match the user's position. One is the the RVIZ view of the robot detecting the AprilTag and then issuing commands to rotate the robot while the other is the real world video of the Ridgeback rotating. 
+#### Navigation                                     ################OLD#################
 
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/RiRbWFQ4rcE">
-</iframe>
 
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/bEwPnggq2Cc">
-</iframe>
 
-#### Perception 
-
-Initially my plan was to use AprilTags and attach them to gloves that the person would wear but being able to communicate with the system without other attachments/tools made more sense. MediaPipe was used for hand detection as well as pose detection. The more reliable option was the hand detection method since using the full body pose detection was too slow and would make the system unable to detect most gestures. With more time, pose detection could have been used to issue specific gestures based on pose detection.
-
-The next video is the camera's video using hand detecting with MediaPipe.
-
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/bXr1E_0RuOY">  
-</iframe>
-
-The next video is the camera's video using Pose detecting with MediaPipe.
-
-<iframe width="420" height="315"
-src="https://www.youtube.com/embed/op8U7gr9XKs">
-</iframe>
 
 ### Integration
 
-<p align="center">
+<!-- <p align="center">
   <img src="/images/DeliveryHelperFlowchart.png" />
-</p>
+</p> -->
 
-Handling three systems that are independent of each other was a daunting task but as mentioned earlier, this would be solved by communicating through ROS topics. The general pipeline is that the perception detects hands/gestures and sends a message to the main topic. The Manipulation node then subscribes to this node and makes the arm perform the pick and place action. Once this action is done, it sends a message to the same topic with a message in the form of "Follow". When this message is true, the Ridgeback will follow the person but as soon as the person shows their hand again, then the Ridgeback will stop until the Manipulation node has accomplished it motion and publishes `Follow`.
 
-When the launchfile is ran with the perception node, once perception detects a hand, it will start making the Ridgeback follow the person. Once hands are detected again, it will start the manipulation node to pick up the block on the base. The next instance will result in the Sawyer picking up the block on the attached stand.
+### Conclusion
 
 
 ### Future Work
 
-There are two key ways to improve the system. First, improving the navigation of the system so it can better follow the person through hallways, around obstacles, etc. The other way is to remove the need for a large AprilTag on the person and some other form of human detection. This would help remove the need for extra components and make it more intuitive to apply in real work scenarios. 
