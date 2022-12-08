@@ -45,24 +45,3 @@ The final iteration of the system now had Robotiq grippers for each arm. The gri
 
 
 
-#### Manipulation                                     ################OLD#################
-
-
-
-#### Navigation                                     ################OLD#################
-
-
-
-
-### Integration
-
-<!-- <p align="center">
-  <img src="/images/DeliveryHelperFlowchart.png" />
-</p> -->
-
-
-### Conclusion
-
-
-### Future Work
-
