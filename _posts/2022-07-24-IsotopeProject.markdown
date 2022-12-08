@@ -1,25 +1,26 @@
 ---
 layout: post
-title:  DeliveryHelper
-date:   2022-3-18 15:01:35 +0300 
+title:  Isotope Retrieval Project
+date:   2022-12-10 15:01:35 +0300 
 image:  DeliveryHelper.gif
 tags:   
 ---
 
-For my Winter Project, I choose to create a robotic system that can act as a delivery assistant for delivering packages for those that need assistance or have many packages to carry at once. It consists of a Ridgeback mobile base with a Sawyer arm mounted to it with a Bumblebee camera attached to the base.
+## Overview
 
-For more information on the Ridgeback and Sawyer, check out the follow repositories: [Ridgeback](https://github.com/jimas95/nu_ridgeback/blob/master/nuridgeback_robot/launch/accessories.launch), and [Sawback](https://github.com/jimas95/sawback)
+After gaining experience in a variety of areas in robotics, I wanted to work on a project in the areas I found the most interesting. This led me to working on a project with Argonne National Laboratory under the supervision of Dr. Jerry Nolen and Dr. Park. Dr. Nolen's lab works with medical isotopes and retrieving them is a huge problem due to radiation levels and time contraints. The longer it takes for the sample to be taken, the more it deteriorates, or decays. Currently, the way the sample is retrieved is through a human going into the radioactive area, with protective gear, and do the steps required to get a hold of the isotope and take it out of the dangerous enviorment. A proposed solution is to make a robot go into the lab and get the isotope but the question was what system can help solve this problem. The system that was made was one composed of a UR16e, UR5e and a MiR 250 mobile base. 
 
-[DeliveryHelper Github](https://github.com/mmorales45/deliveryhelper)
+The goal of this project is to use these three independent robots and have them work together to navigate through a radioactive enviorment, approach the isotope target, decouple it from the beam line and finally bring it back to reseachers so that they can perform experiments and reearch on it. 
+
+To learn more about getting the system running, check out my [Github Repo!](https://github.com/mmorales45/deliveryhelper)
 
 #### Skills Used:
-* MediaPipe
 * Robot Operating Software(ROS)
 * MoveIt!
 * C++
 * Python
 * Manipulation
-* MoveBase
+* System Integration
 
 A clip of the Ridgeback following me when wearing an AprilTag.
 
