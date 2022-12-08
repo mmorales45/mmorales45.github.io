@@ -27,10 +27,11 @@ To learn more about getting the system running, check out my [Github Repo!](http
 * Manipulation
 * System Integration
 
-A clip of the Ridgeback following me when wearing an AprilTag.
+
+An initial test of the movement and manipulation capabilties of the system using only one goal and a relavively simply object to interact with. 
 
 <iframe width="560" height="315"
-src="https://youtube.com/embed/32niG_GuvUo">
+src="https://www.youtube.com/embed/sV2KdmIN7I8">
 </iframe>
 
 ### Design of the System
