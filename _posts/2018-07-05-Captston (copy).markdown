@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  Mobile Manipulation
-date:   2021-12-08 15:01:35 +0300 
+title:  Iso Proj
+date:   2021-12-09 15:01:35 +0300 
 image:  best.gif
 tags:   
 ---
