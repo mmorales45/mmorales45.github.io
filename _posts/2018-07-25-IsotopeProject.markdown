@@ -2,7 +2,7 @@
 layout: post
 title:  Isotope Retrieval Project
 date:   2022-12-10 15:01:35 +0300 
-image:  DeliveryHelper.gif
+image:  
 tags:   Simple
 ---
 
