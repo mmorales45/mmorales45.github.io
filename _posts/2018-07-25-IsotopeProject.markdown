@@ -13,9 +13,9 @@ src="https://www.youtube.com/embed/EdkpwgS8pTo">
 
 ## Overview
 
-After gaining experience in a variety of areas in robotics, I wanted to work on a project in the areas I found the most interesting. This led me to working on a project with Argonne National Laboratory under the supervision of Dr. Jerry Nolen and Dr. Park. Dr. Nolen's lab works with medical isotopes and retrieving them is a huge problem due to radiation levels and time contraints. The longer it takes for the sample to be taken, the more it deteriorates, or decays. Currently, the way the sample is retrieved is through a human going into the radioactive area, with protective gear, and do the steps required to get a hold of the isotope and take it out of the dangerous enviorment. A proposed solution is to make a robot go into the lab and get the isotope but the question was what system can help solve this problem. The system that was made was one composed of a UR16e, UR5e and a MiR 250 mobile base. 
+After gaining experience in a variety of areas in robotics, I wanted to work on a project in the areas I found the most interesting. This led me to work on a project with Argonne National Laboratory under the supervision of Dr. Jerry Nolen and Dr. Park. Dr. Nolen's lab works with medical isotopes and retrieving them is a huge problem due to radiation levels and time constraints. The longer it takes for the sample to be taken, the more it deteriorates or decays. Currently, the way the sample is retrieved is through a human going into the radioactive area, with protective gear, and doing the steps required to get a hold of the isotope and take it out of the dangerous environment. A proposed solution is to make a robot go into the lab and get the isotope but the question was what system can help solve this problem. The system that was made was one composed of a UR16e, UR5e, and a MiR 250 mobile base. 
 
-The goal of this project is to use these three independent robots and have them work together to navigate through a radioactive enviorment, approach the isotope target, decouple it from the beam line and finally bring it back to reseachers so that they can perform experiments and reearch on it. 
+The goal of this project is to use these three independent robots and have them work together to navigate through a radioactive environment, approach the isotope target, decouple it from the beamline and finally bring it back to researchers so that they can perform experiments and research on it. 
 
 To learn more about getting the system running, check out my [Github Repo!](https://github.com/mmorales45/IsotopeRetrieval)
 
@@ -86,8 +86,14 @@ For this project, ROS was going to be the middleware that will allow for communi
 The manipulation portion of the project took the most time to work on. This included many steps in the development. From the initial one arm control, moving two arms in a single file, and to finally having both arms work together to complete a task. 
 
 ![Alt Text](/images/Attach.gif)
+<p align="center">
+  <figcaption align = "center"><b>Figure.6 - The UR16e Attaching the Gripper</b></figcaption>
+</p>
 
 ![Alt Text](/images/Detach.gif)
+<p align="center">
+  <figcaption align = "center"><b>Figure.7 - The UR16e Detaching the Gripper</b></figcaption>
+</p>
 
 The main challenge of the project is that the arms have to be able to remove a water line from the target assembly and then remove the isotope from the assembly. This would then be transported to a researcher so research can be done on it. This process would invole three parts and to make the system more robust, April Tags were used on each to make detection and motion planning easier and consistent. 
 
