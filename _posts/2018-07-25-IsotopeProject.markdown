@@ -34,6 +34,10 @@ An initial test of the movement and manipulation capabilities of the system usin
 src="https://www.youtube.com/embed/sV2KdmIN7I8">
 </iframe>
 
+<p align="left">
+  <figcaption align = "center"><b>Figure.1 - Video of the End Product of the Project!</b></figcaption>
+</p>
+
 ### Design of the System
 
 The system was composed of two different arms due to budget constraints. One option was to use two UR5e to make the system symmetrical and balanced but this came at the cost of the total payload the arms could carry is 10 kg. This could limit the ability of the system to perform if faced with a heavy object. Although the system would be not symmetrical and it would require mounting the arms so that they are not imbalanced, the ability to have a total payload of 21 kg would allow the system to be versatile through a variety of different objects. 
@@ -107,7 +111,7 @@ For the second half of the demo, the system would go about replacing the produce
 #### Navigation                                     
 <p align="center">
   <img src="/images/ArgonneMap.png" />
-  <figcaption align = "center"><b>Figure.5 - Diagram of how the Different Components Interact</b></figcaption>
+  <figcaption align = "center"><b>Figure.8 - Map the MiR generated of the Lab</b></figcaption>
 </p>
 The mobile base is a fundamental part of the project since it will be the catalyst for the system to move around. One of the biggest concerns for the project is that there are ROS drivers for the MiR robots, but there are no official drivers for the MiR 250 model. Even with efforts to get the drivers running, there are issues that make it not reliable.
 
@@ -115,7 +119,7 @@ But it does come with onboard software that takes care of mapping, path planning
 
 <p align="center">
   <img src="/images/MiRSoftware.png" />
-  <figcaption align = "center"><b>Figure.5 - Diagram of how the Different Components Interact</b></figcaption>
+  <figcaption align = "center"><b>Figure.9 - View of the MiR Software</b></figcaption>
 </p>
 
 The onboard software performed very well when there weren't close objects to the goal points. These issues were somewhat alleviated by going into the settings and adjusting the parameters for collision.
@@ -127,6 +131,11 @@ The onboard software performed very well when there weren't close objects to the
 The system can be thought of as two states, navigation, and manipulation. The manipulation node calls upon services from the navigation node that allows it to send goals to the MiR base. This is done at the start of when everything is running and once the disassembling is completed. The manipulation node is the main node that is taking care of all the processes and calls the appropriate function when needed.
 
 ### Conclusion
+
+<p align="center">
+  <img src="/images/TestRig.jpg" />
+  <figcaption align = "center"><b>Figure.5 - Picture of the Main Testing Fixture</b></figcaption>
+</p>
 
 The system initially started as just hardware that can be individually controlled but now it is all integrated. The final system consists of an onboard computer, camera, arms that can path plan with the other arm in mind, and a mobile base that can communicate with the ROS system. 
 
