@@ -72,7 +72,7 @@ The second iteration of the system now had a gripper! However it was an old mode
 The final iteration of the system now had Robotiq grippers for each arm. The grippers were initially controlled through low level control but eventually the ROS drivers/wrappers for the Robotiq grippers were fixed and used. As for the computer of the system, a powerful Alienware laptop was used that was running Ubuntu and running both robotic arm drivers, the camera, the the manipulation node. A laptop is a great solution. Its compact which is a huge benefit considering the amount of space on the system was limited and its powerful enough to enough everything without a concern for performance. There was a small problem in the form of power. This computer drew much more power than its Raspberry Pi 4 competitor which an average power consumption of 85 watts wereas the smaller computer only drew around 5-10 watts. The solution was to add an additional battery that could power the laptop for a full day of operation. 
 
 <p align="center">
-  <img src="/images/Diagram.jpg" />
+  <img src="/images/diagram.jpg" />
   <figcaption align = "center"><b>Figure.5 - Diagram of how the Different Components Interact</b></figcaption>
 </p>
 
