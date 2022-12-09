@@ -73,8 +73,19 @@ The final iteration of the system now had Robotiq grippers for each arm. The gri
 
 
 
-#### Manipulation                                     ################OLD#################
+#### Manipulation                                     
 
+The main aspect of this project is manipulation. Working with single robotic arms is very common and so having two arms involves more things to account for setting up the system. The largest concern is collision amongst the arms. One way to alleviate the problem was to mount the arms at an angle so that the amount of overlap between the workspaces is decreased. There is another way that collision was accounted for and it will be addressed shortly.
+
+For this project, ROS was going to be the middleware that will allow for communication amongst the different systems. One of the benefits of ROS, is the motion planning plugin, MoveIt. MoveIt allows for motion planning of robotic arms and so a user can use the api to control the arm using cartesion movement, joint control and so on. The only requirement once the package is installed to run the plugin on your robot is to create a MoveIt config package. This package allows you to motion plan for any robot but it requires the URDF for the robot. Once the dual arm urdf was made and uploaded, two different arms were defined in the config package and the collision is taken into account when motion planning on either arm. 
+
+The manipulation portion of the project took the most time to work on. This included many steps in the development. From the initial one arm control, moving two arms in a single file, and to finally having both arms work together to complete a task. 
+
+The main challenge of the project is that the arms have to be able to remove a water line from the target assembly and then remove the isotope from the assembly. This would then be transported to a researcher so research can be done on it. This process would invole three parts and to make the system more robust, April Tags were used on each to make detection and motion planning easier and consistent. 
+
+For the first hald of the final demo, the system detects the target assembly and it starts the process by identifying the water line, disconnecting it and placing it to the side with the UR5e. Then the UR16e would remove the target from where is located to allow for the removal of the isotope. The UR5e would then identify the isotope and go to its position and remove it.
+
+For the second half of the demo, the system would go about to replace the produced isotope with one that would be attached to the beamline. This starts by the system finding the replacement and then placing the old isotope next to the replacement. Then the UR16e moves to a position that would allow for assembly. Thr UR5e would then pick up the new part and then do motion planning to finish the assembly. 
 
 
 #### Navigation                                     ################OLD#################
