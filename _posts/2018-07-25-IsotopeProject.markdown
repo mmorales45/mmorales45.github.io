@@ -71,6 +71,10 @@ The second iteration of the system now had a gripper! However it was an old mode
 
 The final iteration of the system now had Robotiq grippers for each arm. The grippers were initially controlled through low level control but eventually the ROS drivers/wrappers for the Robotiq grippers were fixed and used. As for the computer of the system, a powerful Alienware laptop was used that was running Ubuntu and running both robotic arm drivers, the camera, the the manipulation node. A laptop is a great solution. Its compact which is a huge benefit considering the amount of space on the system was limited and its powerful enough to enough everything without a concern for performance. There was a small problem in the form of power. This computer drew much more power than its Raspberry Pi 4 competitor which an average power consumption of 85 watts wereas the smaller computer only drew around 5-10 watts. The solution was to add an additional battery that could power the laptop for a full day of operation. 
 
+<p align="center">
+  <img src="/images/Diagram.jpg" />
+  <figcaption align = "center"><b>Figure.5 - Diagram of how the Different Components Interact</b></figcaption>
+</p>
 
 
 #### Manipulation                                     
@@ -88,20 +92,33 @@ For the first hald of the final demo, the system detects the target assembly and
 For the second half of the demo, the system would go about to replace the produced isotope with one that would be attached to the beamline. This starts by the system finding the replacement and then placing the old isotope next to the replacement. Then the UR16e moves to a position that would allow for assembly. Thr UR5e would then pick up the new part and then do motion planning to finish the assembly. 
 
 
-#### Navigation                                     ################OLD#################
+#### Navigation                                     
 
+The mobile base is a fundamental part of the project since it will be the catalyst for the system to move around. One of the biggest concerns for the project is that there are ROS drivers for the MiR robots, but there are no official drivers for the MiR 250 model. Even with efforts to get the drivers running, there are issues that make it not reliable.
+
+But it does come with onboard software that takes care of mapping, path planning, execution, safety and many more features. The only problem with using the onboard software is communicating with the ROS system running on the computer. REST API came included with the MiR robot and this allows users to create Python scripts that can connect to the MiR software and perform actions such as sending a goal point, listening to current status and other resources. Making a Python script that uses the API into a ROS node was straightforward and allowed communication from the ROS system to the MiR robot. Goal waypoints were defined on the map for the MiR 250 and these points can be called as the next goal when the system needs to get from location A to location B. 
+
+The onboard software performed very well when there weren't close objects to the goal points. These issues were somewhat alleviated by going into the settings and adjusting the parameters for collision.
 
 
 
 ### Integration
 
-<!-- <p align="center">
-  <img src="/images/DeliveryHelperFlowchart.png" />
-</p> -->
-
+The system can be thought of as two states, navigation and manipulation. The manipulation node calls upon servies from the navigation node that allows it to send goals to the MiR base. This is done at the start of when is everything is running and once the disassembling is completed. The manipulation node is the main node that is taking care of all the processes and calls the appropriate function when needed.
 
 ### Conclusion
+
+The system intially started as just hardware that can individually controlled but now it is all integrated. The finally system consists of an onboard computer, camera, arms that can path plan with the other arm in mind, and a mobile base that can communicate with the ROS system. 
+
+The system's purpose was to be able to navigate a lab, interact with a part and bring it to another location to pass it on. The final system can successfully move from one part of the lab to another, do manipualtion to remove the target from its holder and then disassemle it. It then brings the isotope to the drop off point and then pick up a replacement one and insert it back to the target assembly. 
+
+Overall the project was a success and the system is setup and ready for applications that would involve dual arm manipulation and navigation.
+
+But there are some limitations of the system. The first is the use of AprilTags to identify the location of the parts. The use of so many can cause probems if just one is not found throughout the process. 
 
 
 ### Future Work
 
+There are a few areas that can be improved upon. The first one was briefly touched upon earlier, but object detection. The system can be improved by not requiring the use of AprilTags and instead using computer vision to detect the goal objects or another route is to only use one April Tag that can be used for each structure. Since each structure has fixed positions, you always know the position of the isotope relative to the AprilTag and so it would cut down on the amount of markers needed.
+
+The other major improvement is the ability to control both arms simultaneously. Currently the system waits for one arm to compelte a movement before the other one can move. Simultaneous movement can allow for the system to lift objects shaped in a odd manner to use both arms to lift up to the max payload it can support. 
