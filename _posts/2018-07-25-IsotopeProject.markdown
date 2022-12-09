@@ -52,7 +52,7 @@ The initial system was composed was composed of the core robotic components but 
 <p align="center">
   <img src="/images/SecondIter.png" />
 
-  <figcaption align = "center"><b>Figure.2 - UR5e with Robotiq Gripper and UR16e with the Robotis gripper</b></figcaption>
+  <figcaption align = "center"><b>Figure.2 - UR5e with Robotiq Gripper and UR16e with the Robotis Gripper</b></figcaption>
 </p>
 
 The second iteration of the system now had a gripper! However it was an old model Robotis Gripper that did not provide enough force to grip objects heavier than 3 kgs. However, it was enough for picking up light objects. In terms of the computer for the system, it was now down to just one Raspberry PI 4. This was influenced by the previously mentioned power issue but also because a MoveIt config package was made so that a single launchfile could run both robots drivers and the MoveIt launchfile can allow for both arms to move in the same ROS_MASTER. But an issue that came up was performance. Path planning was much slower when compared to just one computer per arm and this is to be expected since the computer was also running the full desktop version of Ubuntu so it had other processes occuring in the background. Increasing this performance with a single onboard computer that would not draw too much power lead to idea of using a Nvidia Jetson Nano but it still had many of the same shortcomings. 
@@ -65,8 +65,7 @@ The second iteration of the system now had a gripper! However it was an old mode
 </p>
 
 <p align="center">
-  <img src="/images/Laptop.jpg" />
-  <img src="/images/Battery.jpg" />
+  <img src="/images/LaptopBattery.jpg" />
   <figcaption align = "center"><b>Figure.4 - Alienware Computer on the Left, Battery on the Right</b></figcaption>
 </p>
 
