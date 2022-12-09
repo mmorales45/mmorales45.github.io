@@ -10,6 +10,9 @@ tags:
 src="https://www.youtube.com/embed/EdkpwgS8pTo">
 </iframe>
 
+<p align="left">
+  <figcaption align = "center"><b>Figure.1 - Video of the End Product of the Project!</b></figcaption>
+</p>
 
 ## Overview
 
@@ -35,7 +38,7 @@ src="https://www.youtube.com/embed/sV2KdmIN7I8">
 </iframe>
 
 <p align="left">
-  <figcaption align = "center"><b>Figure.1 - Video of the End Product of the Project!</b></figcaption>
+  <figcaption align = "center"><b>Figure.1 - Video of an Earlier Demo of the System</b></figcaption>
 </p>
 
 ### Design of the System
@@ -49,7 +52,7 @@ The system was composed of two different arms due to budget constraints. One opt
   <figcaption align = "center"><b>Figure.1 - Robotiq Gripper on the UR5e</b></figcaption>
 </p>
 
-The initial system was composed of the core robotic components but with no grippers attached and each arm was controlled by its own Raspberry PI4. The idea behind the two Raspberry PI 4s was to reduce the amount of load each computer would have to go through and each computer would run the driver for just one arm. A main computer would be used by the researchers and the three computers would share the same ROS_MASTER_URI so that the main computer can access the nodes/drivers for each arm without being connected to it directly. Besides having no gripper, the biggest flaw in this system was power. The two robotic arms and mobile base were being powered by the battery on the MiR base and with the battery being used by three robots already, adding two more sources of power consumption was going to be a problem if the power draw is too much for the onboard battery.
+The initial system was composed of the core robotic components but with only one gripper attached to the UR5e and each arm was controlled by its own Raspberry PI4. The idea behind the two Raspberry PI 4s was to reduce the amount of load each computer would have to go through and each computer would run the driver for just one arm. A main computer would be used by the researchers and the three computers would share the same ROS_MASTER_URI so that the main computer can access the nodes/drivers for each arm without being connected to it directly. Besides having no gripper, the biggest flaw in this system was power. The two robotic arms and mobile base were being powered by the battery on the MiR base and with the battery being used by three robots already, adding two more sources of power consumption was going to be a problem if the power draw is too much for the onboard battery.
 
 #### Second Iteration
 
@@ -59,7 +62,7 @@ The initial system was composed of the core robotic components but with no gripp
   <figcaption align = "center"><b>Figure.2 - UR5e with Robotiq Gripper and UR16e with the Robotis Gripper</b></figcaption>
 </p>
 
-The second iteration of the system now had a gripper! However, it was an old model Robotis Gripper that did not provide enough force to grip objects heavier than 3 kgs. However, it was enough for picking up light objects. In terms of the computer for the system, it was now down to just one Raspberry PI 4. This was influenced by the previously mentioned power issue but also because a MoveIt config package was made so that a single launch file could run both robot's drivers and the MoveIt launch file can allow for both arms to move in the same ROS_MASTER. But an issue that came up was performance. Path planning was much slower when compared to just one computer per arm and this is to be expected since the computer was also running the full desktop version of Ubuntu so it had other processes occurring in the background. Increasing this performance with a single onboard computer that would not draw too much power led to the idea of using a Nvidia Jetson Nano but it still had many of the same shortcomings. 
+The second iteration of the system now had two grippers! However, the new one was an old model Robotis Gripper that did not provide enough force to grip objects heavier than 3 kgs. However, it was enough for picking up light objects. In terms of the computer for the system, it was now down to just one Raspberry PI 4. This was influenced by the previously mentioned power issue but also because a MoveIt config package was made so that a single launch file could run both robot's drivers and the MoveIt launch file can allow for both arms to move in the same ROS_MASTER. But an issue that came up was performance. Path planning was much slower when compared to just one computer per arm and this is to be expected since the computer was also running the full desktop version of Ubuntu so it had other processes occurring in the background. Increasing this performance with a single onboard computer that would not draw too much power led to the idea of using a Nvidia Jetson Nano but it still had many of the same shortcomings. 
 
 ### Third Iteration
 
