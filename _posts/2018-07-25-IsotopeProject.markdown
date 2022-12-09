@@ -38,7 +38,7 @@ src="https://www.youtube.com/embed/sV2KdmIN7I8">
 </iframe>
 
 <p align="left">
-  <figcaption align = "center"><b>Figure.1 - Video of an Earlier Demo of the System</b></figcaption>
+  <figcaption align = "center"><b>Figure.2 - Video of an Earlier Demo of the System</b></figcaption>
 </p>
 
 ### Design of the System
@@ -49,7 +49,7 @@ The system was composed of two different arms due to budget constraints. One opt
 <p align="left">
   <img src="/images/FirstDesign.jpg" />
 
-  <figcaption align = "center"><b>Figure.1 - Robotiq Gripper on the UR5e</b></figcaption>
+  <figcaption align = "center"><b>Figure.3 - Robotiq Gripper on the UR5e</b></figcaption>
 </p>
 
 The initial system was composed of the core robotic components but with only one gripper attached to the UR5e and each arm was controlled by its own Raspberry PI4. The idea behind the two Raspberry PI 4s was to reduce the amount of load each computer would have to go through and each computer would run the driver for just one arm. A main computer would be used by the researchers and the three computers would share the same ROS_MASTER_URI so that the main computer can access the nodes/drivers for each arm without being connected to it directly. Besides having no gripper, the biggest flaw in this system was power. The two robotic arms and mobile base were being powered by the battery on the MiR base and with the battery being used by three robots already, adding two more sources of power consumption was going to be a problem if the power draw is too much for the onboard battery.
@@ -59,7 +59,7 @@ The initial system was composed of the core robotic components but with only one
 <p align="left">
   <img src="/images/SecondIter.png" />
 
-  <figcaption align = "center"><b>Figure.2 - UR5e with Robotiq Gripper and UR16e with the Robotis Gripper</b></figcaption>
+  <figcaption align = "center"><b>Figure.4 - UR5e with Robotiq Gripper and UR16e with the Robotis Gripper</b></figcaption>
 </p>
 
 The second iteration of the system now had two grippers! However, the new one was an old model Robotis Gripper that did not provide enough force to grip objects heavier than 3 kgs. However, it was enough for picking up light objects. In terms of the computer for the system, it was now down to just one Raspberry PI 4. This was influenced by the previously mentioned power issue but also because a MoveIt config package was made so that a single launch file could run both robot's drivers and the MoveIt launch file can allow for both arms to move in the same ROS_MASTER. But an issue that came up was performance. Path planning was much slower when compared to just one computer per arm and this is to be expected since the computer was also running the full desktop version of Ubuntu so it had other processes occurring in the background. Increasing this performance with a single onboard computer that would not draw too much power led to the idea of using a Nvidia Jetson Nano but it still had many of the same shortcomings. 
@@ -68,23 +68,31 @@ The second iteration of the system now had two grippers! However, the new one wa
 
 <p align="center">
   <img src="/images/FinalIter.jpg" />
-  <figcaption align = "center"><b>Figure.3 - Both Arms with Robotiq Grippers</b></figcaption>
+  <figcaption align = "center"><b>Figure.5 - Both Arms with Robotiq Grippers</b></figcaption>
 </p>
 
 <p align="center">
   <img src="/images/LaptopBattery.jpg" />
-  <figcaption align = "center"><b>Figure.4 - Alienware Computer on the Left, Battery on the Right</b></figcaption>
+  <figcaption align = "center"><b>Figure.6 - Alienware Computer on the Left, Battery on the Right</b></figcaption>
 </p>
 
 The final iteration of the system now had Robotiq grippers for each arm. The grippers were initially controlled through low-level control but eventually, the ROS drivers/wrappers for the Robotiq grippers were fixed and used. As for the computer of the system, a powerful Alienware laptop was used that was running Ubuntu and running both robotic arm drivers, the camera, and the manipulation node. A laptop is a great solution. It's compact which is a huge benefit considering the amount of space on the system was limited and it's powerful enough to enough everything without concern for performance. There was a small problem in the form of power. This computer drew much more power than its Raspberry Pi 4 competitor which had an average power consumption of 85 watts whereas the smaller computer only drew around 5-10 watts. The solution was to add an additional battery that could power the laptop for a full day of operation. 
 
 <p align="center">
   <img src="/images/diagram.jpg" />
-  <figcaption align = "center"><b>Figure.5 - Diagram of how the Different Components Interact</b></figcaption>
+  <figcaption align = "center"><b>Figure.6 - Diagram of how the Different Components Interact</b></figcaption>
 </p>
 
 
 #### Manipulation                                     
+
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/iIandA4uCSw">
+</iframe>
+
+<p align="left">
+  <figcaption align = "center"><b>Figure.8 - Video of the Manipulation Through RVIZ</b></figcaption>
+</p>
 
 The main aspect of this project is manipulation. Working with single robotic arms is very common and so having two arms involves more things to account for setting up the system. The largest concern is collision among the arms. One way to alleviate the problem was to mount the arms at an angle so that the amount of overlap between the workspaces is decreased. There is another way that collision was accounted for and it will be addressed shortly.
 
@@ -92,19 +100,19 @@ For this project, ROS was going to be the middleware that will allow for communi
 
 <p align="center">
   <img src="/images/moveit_Setup.png" />
-  <figcaption align = "center"><b>Figure.5 - Diagram of how the Different Components Interact</b></figcaption>
+  <figcaption align = "center"><b>Figure.9 - Moveit Setup Assistant</b></figcaption>
 </p>
 
 The manipulation portion of the project took the most time to work on. This included many steps in the development. From the initial one-arm control, moving two arms in a single file, and finally having both arms work together to complete a task. 
 
 <p align="center">
   <img src="/images/Attach.gif" alt="animated" />
-  <figcaption align = "center"><b>Figure.6 - The UR16e Attaching the Gripper</b></figcaption>
+  <figcaption align = "center"><b>Figure.10 - The UR16e Attaching the Gripper</b></figcaption>
 </p>
 
 <p align="center">
   <img src="/images/Detach.gif" alt="animated" />
-  <figcaption align = "center"><b>Figure.7 - The UR16e Detaching the Gripper</b></figcaption>
+  <figcaption align = "center"><b>Figure.11 - The UR16e Detaching the Gripper</b></figcaption>
 </p>
 
 
@@ -119,7 +127,7 @@ For the second half of the demo, the system would go about replacing the produce
 #### Navigation                                     
 <p align="center">
   <img src="/images/ArgonneMap.png" />
-  <figcaption align = "center"><b>Figure.8 - Map the MiR generated of the Lab</b></figcaption>
+  <figcaption align = "center"><b>Figure.12 - Map the MiR generated of the Lab</b></figcaption>
 </p>
 The mobile base is a fundamental part of the project since it will be the catalyst for the system to move around. One of the biggest concerns for the project is that there are ROS drivers for the MiR robots, but there are no official drivers for the MiR 250 model. Even with efforts to get the drivers running, there are issues that make it not reliable.
 
@@ -127,7 +135,7 @@ But it does come with onboard software that takes care of mapping, path planning
 
 <p align="center">
   <img src="/images/MiRSoftware.png" />
-  <figcaption align = "center"><b>Figure.9 - View of the MiR Software</b></figcaption>
+  <figcaption align = "center"><b>Figure.13 - View of the MiR Software</b></figcaption>
 </p>
 
 The onboard software performed very well when there weren't close objects to the goal points. These issues were somewhat alleviated by going into the settings and adjusting the parameters for collision.
@@ -142,7 +150,7 @@ The system can be thought of as two states, navigation, and manipulation. The ma
 
 <p align="center">
   <img src="/images/TestRig.jpg" />
-  <figcaption align = "center"><b>Figure.5 - Picture of the Main Testing Fixture</b></figcaption>
+  <figcaption align = "center"><b>Figure.14 - Picture of the Main Testing Fixture</b></figcaption>
 </p>
 
 The system initially started as just hardware that can be individually controlled but now it is all integrated. The final system consists of an onboard computer, camera, arms that can path plan with the other arm in mind, and a mobile base that can communicate with the ROS system. 
