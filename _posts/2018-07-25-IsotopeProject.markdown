@@ -85,9 +85,13 @@ For this project, ROS was going to be the middleware that will allow for communi
 
 The manipulation portion of the project took the most time to work on. This included many steps in the development. From the initial one arm control, moving two arms in a single file, and to finally having both arms work together to complete a task. 
 
+![Alt Text](/images/Attach.gif)
+
+![Alt Text](/images/Detach.gif)
+
 The main challenge of the project is that the arms have to be able to remove a water line from the target assembly and then remove the isotope from the assembly. This would then be transported to a researcher so research can be done on it. This process would invole three parts and to make the system more robust, April Tags were used on each to make detection and motion planning easier and consistent. 
 
-For the first hald of the final demo, the system detects the target assembly and it starts the process by identifying the water line, disconnecting it and placing it to the side with the UR5e. Then the UR16e would remove the target from where is located to allow for the removal of the isotope. The UR5e would then identify the isotope and go to its position and remove it.
+For the first half of the final demo, the system detects the target assembly and it starts the process by identifying the water line, disconnecting it and placing it to the side with the UR5e. Then the UR16e would remove the target from where is located to allow for the removal of the isotope. The UR5e would then identify the isotope and go to its position and remove it.
 
 For the second half of the demo, the system would go about to replace the produced isotope with one that would be attached to the beamline. This starts by the system finding the replacement and then placing the old isotope next to the replacement. Then the UR16e moves to a position that would allow for assembly. Thr UR5e would then pick up the new part and then do motion planning to finish the assembly. 
 
