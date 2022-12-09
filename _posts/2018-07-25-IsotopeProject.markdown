@@ -90,6 +90,11 @@ The main aspect of this project is manipulation. Working with single robotic arm
 
 For this project, ROS was going to be the middleware that will allow for communication among the different systems. One of the benefits of ROS, is the motion planning plugin, MoveIt. MoveIt allows for motion planning of robotic arms and so a user can use the API to control the arm using cartesian movement, joint control, and so on. The only required once the package is installed to run the plugin on your robot is to create a MoveIt config package. This package allows you to motion plan for any robot but it requires the URDF for the robot. Once the dual arm URDF was made and uploaded, two different arms were defined in the config package and the collision is taken into account when motion planning on either arm. 
 
+<p align="center">
+  <img src="/images/moveit_Setup.png" />
+  <figcaption align = "center"><b>Figure.5 - Diagram of how the Different Components Interact</b></figcaption>
+</p>
+
 The manipulation portion of the project took the most time to work on. This included many steps in the development. From the initial one-arm control, moving two arms in a single file, and finally having both arms work together to complete a task. 
 
 <p align="center">
