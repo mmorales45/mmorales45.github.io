@@ -117,7 +117,7 @@ The manipulation portion of the project took the most time to work on. This incl
 
 
 
-The main challenge of the project is that the arms have to be able to remove a water line from the target assembly and then remove the isotope from the assembly. This would then be transported to a researcher so research can be done on it. This process would involve three parts and make the system more robust, April Tags were used on each to make detection and motion planning easier and more consistent. 
+The main challenge of the project is that the arms have to be able to remove a water line from the target assembly and then remove the isotope from the assembly. This would then be transported to a researcher so research can be done on it. This process would involve three parts and to make the system more robust, AprilTags were used on each part to make detection and motion planning easier and more consistent. 
 
 For the first half of the final demo, the system detects the target assembly and it starts the process by identifying the water line, disconnecting it, and placing it to the side with the UR5e. Then the UR16e would remove the target from where is located to allow for the removal of the isotope. The UR5e would then identify the isotope and go to its position and remove it.
 
@@ -138,13 +138,13 @@ But it does come with onboard software that takes care of mapping, path planning
   <figcaption align = "center"><b>Figure.13 - View of the MiR Software</b></figcaption>
 </p>
 
-The onboard software performed very well when there weren't close objects to the goal points. These issues were somewhat alleviated by going into the settings and adjusting the parameters for collision.
+The onboard software performed very well when there weren't close objects to the goal points. Problems would occur if the target goal was in a collision area, close to the red dots in the figure above. These issues were somewhat alleviated by going into the settings and adjusting the parameters for collision and reducing the threshold.
 
 
 
 ### Integration
 
-The system can be thought of as two states, navigation, and manipulation. The manipulation node calls upon services from the navigation node that allows it to send goals to the MiR base. This is done at the start of when everything is running and once the disassembling is completed. The manipulation node is the main node that is taking care of all the processes and calls the appropriate function when needed.
+The system can be thought of as two states, navigation, and manipulation. The manipulation node calls upon services from the navigation node that allows it to send goals to the MiR base. This is done at the start of when everything is running and once the disassembling is completed. The manipulation node is the main node that is taking care of all the processes and calls the appropriate function when needed, whether is be decoupling the target isotope from the fixture to replacing the old isotope.
 
 ### Conclusion
 
@@ -155,11 +155,9 @@ The system can be thought of as two states, navigation, and manipulation. The ma
 
 The system initially started as just hardware that can be individually controlled but now it is all integrated. The final system consists of an onboard computer, camera, arms that can path plan with the other arm in mind, and a mobile base that can communicate with the ROS system. 
 
-The system's purpose was to be able to navigate a lab, interact with a part and bring it to another location to pass it on. The final system can successfully move from one part of the lab to another, do manipulation to remove the target from its holder, and then disassemble it. It then brings the isotope to the drop-off point and then picks up a replacement one and inserts it back into the target assembly. 
+The system's purpose was to be able to navigate a lab, interact with a part and bring it to another location to pass it on. The final system can successfully move from one part of the lab to another, do manipulation to remove the target from its holder, and then disassemble it. It then brings the isotope to the drop-off point and then picks up a replacement one and inserts it back into the target assembly. It proves the capabilities of the system and if more time was put into the project, it will be able to be deployed in the radioactive enviornment.
 
 Overall the project was a success and the system is set up and ready for applications that would involve dual arm manipulation and navigation.
-
-But there are some limitations of the system. The first is the use of AprilTags to identify the location of the parts. The use of so many can cause problems if just one is not found throughout the process. 
 
 
 ### Future Work
@@ -167,3 +165,5 @@ But there are some limitations of the system. The first is the use of AprilTags 
 There are a few areas that can be improved upon. The first one was briefly touched upon earlier, but object detection. The system can be improved by not requiring the use of AprilTags and instead using computer vision to detect the goal objects or another route is to only use one April Tag that can be used for each structure. Since each structure has fixed positions, you always know the position of the isotope relative to the AprilTag and so it would cut down on the number of markers needed.
 
 The other major improvement is the ability to control both arms simultaneously. Currently, the system waits for one arm to complete a movement before the other one can move. Simultaneous movement can allow for the system to lift objects shaped in an odd manner to use both arms to lift up to the max payload it can support. 
+
+It would also be a good idea to add shielding to the system if it were to be deployed in a radioactive enviornment. 
