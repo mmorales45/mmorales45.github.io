@@ -12,4 +12,4 @@ permalink: /Morales-Resume/
 </p> -->
 
 
-[View My Resume!](https://drive.google.com/file/d/10YJiNAX1rQ01NPbIMNLpf667uzx2v53a/view?usp=sharing)
+[View My Resume!](https://drive.google.com/file/d/1e961sT0JVH0h8l3Nr5ImWwkh54dSfIyP/view?usp=drive_link)
