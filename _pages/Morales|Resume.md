@@ -5,11 +5,11 @@ permalink: /Morales-Resume/
 # image: 08.jpg
 ---
 
-<iframe src="/images/Marco_Morales.pdf" width="100%" height="1000px">
+<iframe src="/images/Marco-Morales-Resume.pdf" width="100%" height="1000px">
 </iframe>
 <!-- <p align="center">
   <img src="/zolan/images/resume.png" />
 </p> -->
 
 
-[View My Resume!](https://drive.google.com/file/d/1e961sT0JVH0h8l3Nr5ImWwkh54dSfIyP/view?usp=drive_link)
+[View My Resume!](https://drive.google.com/file/d/1_kZet4DiX0Bf8TbN1xMBtH7-PYGBWU1G/view?usp=sharing)
